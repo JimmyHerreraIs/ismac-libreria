@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.distribuida.entities.Autor;
 
 @Repository
-public class AutorDAOImpl2 implements AutorDAO {
+public class AutorDAOImpl implements AutorDAO {
 
 	// HQL
 	// findAll
