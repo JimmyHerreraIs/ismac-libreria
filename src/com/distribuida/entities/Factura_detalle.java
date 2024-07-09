@@ -1,10 +1,13 @@
 package com.distribuida.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -22,6 +25,10 @@ public class Factura_detalle {
 	private int cantidad;
 	@Column(name="subtotal")
 	private float subtotal;
+	
+	@JoinColumn(name="idfactura")
+	@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH})
+	private Factura_detalle factura_detalle;
 	
 	public Factura_detalle() {}
 	
