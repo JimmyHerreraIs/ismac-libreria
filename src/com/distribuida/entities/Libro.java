@@ -2,30 +2,63 @@ package com.distribuida.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 
 @Component
+@Entity
+@Table(name= "libro")
 public class Libro {
 
+	//manejo de componentes
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name= "id_libro")
 	private int idLibro;
-	private String titulo; 
-	private String editorial; 
+	@Column(name="titulo")
+	private String titulo;
+	@Column(name="editorial")
+	private String editorial;
+	@Column(name="numPaginas")
 	private int numPaginas;
+	@Column(name="edicion")
 	private String edicion;
+	@Column(name="idioma")
 	private String idioma;
+	@Column(name="fechaPublicacion")
 	private Date fechaPublicacion;
-	private String descripcion; 
-	private String tipoPasta; 
+	@Column(name="descripcion")
+	private String descripcion;
+	@Column(name="tipoPasta")
+	private String tipoPasta;
+	@Column(name="ISBN")
 	private String ISBN;
-	private int numEjemplares; 
+	@Column(name="numEjemplares")
+	private int numEjemplares;
+	@Column(name="portada")
 	private String portada;
+	@Column(name="presentacion")
 	private String presentacion;
-	private double precio; 
-	private Categoria categoria;
-	private Autor autor;
+	@Column(name="precio")
+	private double precio;
+	
 
-
+	@JoinColumn(name = "id_Categoria")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	private Categoria categoria; //private int idCategoria;
+	@JoinColumn(name = "id_Autor")
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	private Autor autor; //private int idAutor;
 	
 	public Libro() {}
 

@@ -25,9 +25,9 @@ public class PrincipalLibro {
 		ClienteDAO  clientenDAO= context.getBean("clienteDAOImpl", ClienteDAO.class);
 		// CRUD : CREATE, READ UPDATE y DELETE
 		// add
-		Libro Libro = new Libro(1,"Infierno","Marquiños",520,"Primera edicion","Español",new Date(),"Un mundo de marravillas misteriosas","Dura","12-12-34",10,"Infierno","Original",24.45,"Historia", 'Pamela');
-		Libro.setCliente(clientenDAO.findOne(2));
-		LibroDAO.add(Libro);
+		//Libro Libro = new Libro(1,"Infierno","Marquiños",520,"Primera edicion","Español",new Date(),"Un mundo de marravillas misteriosas","Dura","12-12-34",10,"Infierno","Original",24.45,"Historia", 'Pamela');
+		//Libro.setCliente(clientenDAO.findOne(2));
+		//LibroDAO.add(Libro);
 		
 		
 		//LibroDAO.up(Libro2);

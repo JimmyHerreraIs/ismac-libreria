@@ -68,14 +68,22 @@ public class LibroDAOImpl implements LibroDAO {
 										+ "                  , au.telefono =: keyTelefono"
 										+ "				     , au.correo =: keyCorreo "
 										+ "           WHERE  au.idLibro =: keyIdLibro");
-		query.setParameter("keyNombre", Libro.getNombre());
-		query.setParameter("keyApellido", Libro.getApellido());
-		query.setParameter("keyPais", Libro.getPais());
-		query.setParameter("keyDireccion", Libro.getDireccion());
-		query.setParameter("keyTelefono", Libro.getTelefono());
-		query.setParameter("keyCorreo", Libro.getCorreo());
-		query.setParameter("keyIdLibro", Libro.getIdLibro());
-		
+		query.setParameter("autor", Libro.getAutor());
+		query.setParameter("categoria", Libro.getCategoria());
+		query.setParameter("descripcion", Libro.getDescripcion());
+		query.setParameter("edicion", Libro.getEdicion());
+		query.setParameter("editoral", Libro.getEditorial());
+		query.setParameter("FechaPublicacion", Libro.getFechaPublicacion());
+		query.setParameter("idioma", Libro.getIdioma());
+		query.setParameter("libro", Libro.getIdLibro());
+		query.setParameter("ISBN", Libro.getISBN());
+		query.setParameter("numejemplares", Libro.getNumEjemplares());
+		query.setParameter("numpaginas", Libro.getNumPaginas());
+		query.setParameter("portada", Libro.getPortada());
+		query.setParameter("precio", Libro.getPrecio());
+		query.setParameter("presentacion", Libro.getPresentacion());
+		query.setParameter("tipopasta", Libro.getTipoPasta());
+		query.setParameter("titulo", Libro.getTitulo());	
 		query.executeUpdate();
 		
 	}
