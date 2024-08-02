@@ -26,9 +26,15 @@ public class Factura_detalle {
 	@Column(name="subtotal")
 	private float subtotal;
 	
-	@JoinColumn(name="idfactura")
+	@JoinColumn(name="id_factura")
 	@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH})
-	private Factura_detalle factura_detalle;
+	private Factura factura;
+	
+	
+	@JoinColumn(name="id_libro")
+	@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE,CascadeType.PERSIST, CascadeType.REFRESH})
+	private Libro libro;
+	
 	
 	public Factura_detalle() {}
 	

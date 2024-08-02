@@ -9,7 +9,7 @@ public interface Factura_detalleDAO {
 	// CRUD básico 
 	public List<Factura_detalle> findAll();
 	
-	public int findOne(int id);
+	public Factura_detalle findOne(int id);
 	
 	public void add(Factura_detalle Factura_detalle);
 	
