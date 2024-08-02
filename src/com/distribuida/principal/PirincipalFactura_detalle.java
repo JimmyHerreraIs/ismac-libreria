@@ -24,7 +24,7 @@ public class PirincipalFactura_detalle {
 		// CRUD : CREATE, READ UPDATE y DELETE
 		// add
 		Factura_detalle factura_detalle = new Factura_detalle(1,23,2);
-		factura_detalle.setIdfacturadetalle(Factura_detalleDAO.findOne(1));
+		//factura_detalle.setIdfacturadetalle(Factura_detalleDAO.findOne(1));
 		Factura_detalleDAO.add(factura_detalle);
 		
 		
